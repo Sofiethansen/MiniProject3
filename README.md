@@ -9,7 +9,7 @@ Student Number: 20234705
 
 Link to Project: https://github.com/Sofiethansen/MiniProject3
 
-Link to YouTube video of the game: 
+Link to YouTube video of the game: https://www.youtube.com/watch?v=0739UQL73QE
 
 
 The idea of the game
