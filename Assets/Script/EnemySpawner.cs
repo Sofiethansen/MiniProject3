@@ -12,6 +12,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpawnEnemy()
     {
+        // Check if the enemy prefab is not assigned or if there are no spawn points specified.
         if (enemyPrefab == null || spawnPoints.Length == 0)
         {
             Debug.LogWarning("Enemy prefab or spawn points not set.");
@@ -35,15 +36,18 @@ public class EnemySpawner : MonoBehaviour
 
         Debug.Log($"New enemy spawned at: {spawnPoint.position}");
     }
-
+    // Method to start the process of spawning an enemy after a delay.
     public void SpawnEnemyWithDelay()
     {
+        // Starts a coroutine that will spawn an enemy after a specified delay.
         StartCoroutine(SpawnEnemyAfterDelay(spawnDelay));
     }
-
+    // Private coroutine to handle delayed enemy spawning.
     private IEnumerator SpawnEnemyAfterDelay(float delay)
     {
+        // Waits for the specified amount of time before continuing.
         yield return new WaitForSeconds(delay);
+        // Calls the SpawnEnemy method to spawn
         SpawnEnemy();
     }
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// The 'Bullet' class controls the behavior of a bullet in the game.
 public class Bullet : MonoBehaviour
 {
     public float life = 3; // Lifetime of the bullet in seconds
@@ -9,18 +10,13 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject, life); // Destroy the bullet after 'life' seconds
     }
 
+    // Called when the bullet collides with another object.
     private void OnCollisionEnter(Collision collision)
     {
+        // Check if the object the bullet collided with has the tag "Enemy".
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            // Add 1 to the enemy score when the enemy is hit
-            /*ScoreManager scoreManager = FindObjectOfType<ScoreManager>();
-            if (scoreManager != null)
-            {
-                scoreManager.AddScore(1); // Add score to the enemy score
-            
-*/
-            // Destroy the enemy and the bullet
+            // Destroy the enemy object
             Destroy(collision.gameObject);
         }
 
